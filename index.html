@@ -43,7 +43,33 @@
   };
 </script>
 <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
-  
+
+<style>
+  .section-alt {
+    background-color: #f8f8f8;
+  }
+  .abstract-box {
+    background: #ffffff;
+    border: 1px solid #e0e0e0;
+    border-radius: 8px;
+    padding: 2rem 2.5rem;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.07);
+    text-align: left;
+  }
+  .hero-teaser {
+    margin-top: 2rem;
+  }
+  .hero-teaser img {
+    border-radius: 6px;
+    box-shadow: 0 4px 16px rgba(0,0,0,0.10);
+  }
+  .hero-teaser p {
+    margin-top: 0.85rem;
+    color: #555;
+    font-size: 0.95rem;
+  }
+</style>
+
 </head>
 <body>
 
@@ -112,35 +138,23 @@
               </span> -->
             </div>
           </div>
+          <div class="hero-teaser">
+            <img src="static/images/introfig.png" style="width:100%;" />
+            <p>Our method handles various types of edits including significant changes in scene geometry. The edits are both photometrically and geometrically consistent across the views.</p>
+          </div>
         </div>
       </div>
     </div>
   </div>
 </section>
 
-
-
-<!-- Intro Figure -->
-<section class="section">
-  <div class="container is-max-desktop">
-    <div class="columns is-centered has-text-centered">
-      <div class="column">
-        <img src="static/images/introfig.png" style="width:100%;" />
-        <p class="content" style="margin-top:1rem;">
-          Our method handles various types of edits including significant changes in scene geometry. The edits are both photometrically and geometrically consistent across the views.
-        </p>
-      </div>
-    </div>
-  </div>
-</section>
-
 <!-- Abstract -->
-<section class="section">
+<section class="section section-alt">
   <div class="container is-max-desktop">
     <div class="columns is-centered has-text-centered">
       <div class="column is-four-fifths">
         <h2 class="title is-3">Abstract</h2>
-        <div class="content has-text-justified">
+        <div class="abstract-box content has-text-justified">
           <p>
           Recent developments in multi-view image editing with generative models have brought us a step closer toward general 3D content generation and customization. Most existing works focus on <em>rigid</em> or <em>appearance-only</em> edits by utilizing the geometry of the unedited scene. This naturally limits these methods to edits that preserve the underlying scene structure. Other approaches are trained for specific image editing tasks, such as object removal and insertion.
           Despite this progress, general nonrigid edits, <em>i.e.</em>, edits that substantially change the scene geometry, remain challenging for existing methods.
@@ -173,7 +187,7 @@
 </section>
 
 <!-- Video -->
-<section class="section">
+<section class="section section-alt">
   <div class="container is-max-desktop">
     <div class="columns is-centered has-text-centered">
       <div class="column is-four-fifths">
@@ -214,7 +228,7 @@
     </div>
   </div>
 </section>
-<section class="section" id="BibTeX">
+<section class="section section-alt" id="BibTeX">
   <div class="container is-max-desktop content">
     <h2 class="title">BibTeX</h2>
        <p> 
