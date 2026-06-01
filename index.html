@@ -6,7 +6,7 @@
         content="3D-Consistent Multi-View Editing by Correspondence Guidance">
   <meta name="keywords" content="3D Editing">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>3D-Consistent Multi-View Editing by Correspondence Guidance</title>
+  <title>GeM-NR: Geometry-Aware Multi-View Editing for Nonrigid Scene Changes</title>
 
   <script>
     window.dataLayer = window.dataLayer || [];
@@ -57,11 +57,6 @@
             <span class="author-block">
               <a href="https://www.chalmers.se/en/persons/bjosef/">Josef Bengtson</a><sup>1</sup>, </span>
             <span class="author-block">
-              <a href="">David Nilsson</a><sup>1</sup>, </span>
-            <span class="author-block">
-              <a href="">Dong In Lee</a><sup>2</sup>,
-            </span>
-            <span class="author-block">
               <a href="https://ylochman.github.io/">Yaroslava Lochman</a><sup>1</sup>,
             </span>
             <span class="author-block">
@@ -79,7 +74,7 @@
             <div class="publication-links">
               <!-- PDF Link. -->
               <span class="link-block">
-                <a href="static/3d_consistent_editing.pdf"
+                <a href="static/"
                    class="external-link button is-normal is-rounded is-dark">
                   <span class="icon">
                       <i class="fas fa-file-pdf"></i>
@@ -88,7 +83,7 @@
                 </a>
               </span>
               <span class="link-block">
-                <a href="https://arxiv.org/abs/2511.22228"
+                <a href=""
                    class="external-link button is-normal is-rounded is-dark">
                   <span class="icon">
                       <i class="ai ai-arxiv"></i>
@@ -168,9 +163,14 @@
         <div class="content has-text-justified">
           
           <p> 
-            Image editing methods applied independently to multi-view images often produce inconsistent edits across views. Our method improves multi-view consistency, and can be easily be combined with different 2D Editing methods.
+            Recent developments in multi-view image editing with generative models have brought us a step closer toward general 3D content generation and customization. Most existing works focus on \textit{rigid} or \textit{appearance-only} edits by utilizing the geometry of the unedited scene. This naturally limits these methods to edits that preserve the underlying scene structure. Other approaches are trained for specific image editing tasks, such as object removal and insertion.
+Despite this progress, general nonrigid edits, \textit{i.e.}, edits that substantially change the scene geometry, remain challenging for existing methods.
+
+We propose \MethodAcronym, a fast and flexible training-free approach for \textit{general} multi-view consistent image editing, including edits that drastically change the geometry and appearance of the scene. Given an anchor image edited with a chosen backbone editor (such as FLUX, Qwen, BrushNet) and a query unedited image, \MethodAcronym edits the query image consistently with the anchor edit. The method incorporates multiple stages:  
+(i) depth map estimation, where we propose a  strategy to maximize the alignment between the 3D point clouds of the edited and unedited scenes, (ii) projection onto a query viewpoint, and (iii) refinement of the obtained image conditioned on the unedited query. The conditioning-based formulation scales well from two to many views of an object. 
+We demonstrate the ability of our method to handle edits with significant changes in geometry and appearance, something that existing methods struggle with. We perform an extensive evaluation showing that our method improves consistency for a wide variety of edit tasks, including generating 3D representations of the edited scene. Both quantitative and qualitative results indicate the state-of-the-art performance of our method in terms of edit quality as well as geometric and photometric consistency across multiple views.
 .
-          </p> 
+          <!-- </p> 
             
 
             <h4 class="title is-5 has-text-centered">Edited Multi-View Images with <a href="https://arxiv.org/abs/2506.15742" target="_blank">FLUX.1</a></h4>
@@ -198,131 +198,11 @@
             <div>
               <img src="static/images/ConsistencyTable.png" />
             </div>
-          </div>
+          </div> -->
 
 
         
           
-      
-          
-        </div>
-      </div>
-    </div>
-    <!--/ Multi-view Consistent Editing -->
-  </div>
-</section>
-  
-
-<section class="section is-small">
-  <div class="container is-max-desktop">
-    <!-- Method -->
-    <div class="columns is-centered has-text-centered">
-      <div class="column is-four-fifths">
-        <h2 class="title is-3">Method</h2>
-        <div class="content has-text-justified">
-
-          <p> 
-            Our method guides the diffusion or flow-matching editing process to improve multi-view consistency.
-         </p>
-   <section class="section">
-  <div class="container is-max-desktop">
-    <div class="hero-body">
-      <image src="static/images/systemfig.png" />
-      <h2 class="subtitle has-text-centered">
-        <span class="dnerf">
-      </h2>
-    </div>
-  </div>
-</section>
-         <p> 
-            Given a set of input images, each view is edited sequentially by guiding the denoising process based on the previously edited images. The guidance is based on the assumption that matching points in the unedited images should be edited similarly. During the denoising process the noise estimate $\epsilon(z_t,t)$ is modified according to a consistency loss $\mathcal{L}_c$ resulting in multi-view consistent edits.
-          </p> 
-          
-        </div>
-      </div>
-    </div>
-
-        <!--/ Sparse Editing  -->
-  </div>
-</section>
-
-  <section class="section">
-  <div class="container is-max-desktop">
-    <!---->
-    <div class="columns is-centered has-text-centered">
-      <div class="column is-four-fifths">
-        <h2 class="title is-3"> Sparse Editing </h2>
-        <div class="content has-text-justified">
-    <p> 
-      Our method can also be utilized for sparse-view editing.
-       </p>
-           <div class="container is-max-desktop">
-            <div class="hero-body">
-              <image src="static/images/SparseExample.png" />
-              <h4 class="subtitle has-text-centered" style="font-size: 1rem;">
-                <span class="dnerf">
-              </h2>
-            </div>
-          </div>
-     <!-- pix2pix turbo video. -->
-    <!--/<div class="columns is-centered has-text-centered">
-      <div class="column is-four-fifths">
-        <h2 class="title is-3">Video</h2>
-        <div class="publication-video">
-          <iframe width="560" height="315" src="" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
-        </div>
-      </div>
-    </div> -->
-    <video controls>
-      <source src="SparseVideoExample2.mp4" type="video/mp4">
-    </video>
-    <!--/ Paper video. -->
-
-          
-        </div>
-      </div>
-    </div>
-    <!--/ Sparse Editing -->
-
-
-    
-    <!--/ Different Editing  -->
-  </div>
-</section>
-
-  <section class="section">
-  <div class="container is-max-desktop">
-    <!---->
-    <div class="columns is-centered has-text-centered">
-      <div class="column is-four-fifths">
-        <h2 class="title is-3"> Renderings from edited 3DGS for all test scenes </h2>
-        <div class="content has-text-justified">
-    <p> 
-      We here show results for our method combined with both <a href="https://arxiv.org/abs/2211.09800" target="_blank">InstructPix2Pix</a> and <a href="https://arxiv.org/abs/2403.12036" target="_blank">pix2pix-turbo</a>.
-       </p>
-     <!-- pix2pix turbo video. -->
-    <!--/<div class="columns is-centered has-text-centered">
-      <div class="column is-four-fifths">
-        <h2 class="title is-3">Video</h2>
-        <div class="publication-video">
-          <iframe width="560" height="315" src="" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
-        </div>
-      </div>
-    </div> -->
-    <video controls>
-      <source src="all_scenes.mp4" type="video/mp4">
-    </video>
-    <!--/ Paper video. -->
-
-          
-        </div>
-      </div>
-    </div>
-    <!--/ Different Editing -->
-
-
-    
-    
   </div>
 </section>
 <section class="section" id="BibTeX">
@@ -332,14 +212,7 @@
   If you use this work or find it helpful, please consider citing: 
       </p>
 <pre><code>
-  @misc{bengtson20263dconsistentmultivieweditingcorrespondence,
-      title={3D-Consistent Multi-View Editing by Correspondence Guidance}, 
-      author={Josef Bengtson and David Nilsson and Dong In Lee and Yaroslava Lochman and Fredrik Kahl},
-      year={2026},
-      eprint={2511.22228},
-      archivePrefix={arXiv},
-      primaryClass={cs.CV},
-      url={https://arxiv.org/abs/2511.22228}, 
+  @misc{
 }
 </code></pre>
   </div>
