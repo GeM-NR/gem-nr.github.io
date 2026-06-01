@@ -131,9 +131,14 @@
         </div>
       </div>
     </div> -->
-    <video controls>
-      <source src="main_video.mp4" type="video/mp4">
-    </video>
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3">Video</h2>
+        <video controls style="width:100%;">
+          <source src="static/video/Video.mp4" type="video/mp4">
+        </video>
+      </div>
+    </div>
     <!--/ Paper video. -->
   </div>
     <!-- Abstract. -->
@@ -141,11 +146,11 @@
       <div class="column is-four-fifths">
         <h2 class="title is-3">Abstract</h2>
         <div class="content has-text-justified">
-                      Recent developments in multi-view image editing with generative models have brought us a step closer toward general 3D content generation and customization. Most existing works focus on \textit{rigid} or \textit{appearance-only} edits by utilizing the geometry of the unedited scene. This naturally limits these methods to edits that preserve the underlying scene structure. Other approaches are trained for specific image editing tasks, such as object removal and insertion.
-Despite this progress, general nonrigid edits, \textit{i.e.}, edits that substantially change the scene geometry, remain challenging for existing methods.
+                      Recent developments in multi-view image editing with generative models have brought us a step closer toward general 3D content generation and customization. Most existing works focus on <em>rigid</em> or <em>appearance-only</em> edits by utilizing the geometry of the unedited scene. This naturally limits these methods to edits that preserve the underlying scene structure. Other approaches are trained for specific image editing tasks, such as object removal and insertion.
+Despite this progress, general nonrigid edits, <em>i.e.</em>, edits that substantially change the scene geometry, remain challenging for existing methods.
 
-We propose \MethodAcronym, a fast and flexible training-free approach for \textit{general} multi-view consistent image editing, including edits that drastically change the geometry and appearance of the scene. Given an anchor image edited with a chosen backbone editor (such as FLUX, Qwen, BrushNet) and a query unedited image, \MethodAcronym edits the query image consistently with the anchor edit. The method incorporates multiple stages:  
-(i) depth map estimation, where we propose a  strategy to maximize the alignment between the 3D point clouds of the edited and unedited scenes, (ii) projection onto a query viewpoint, and (iii) refinement of the obtained image conditioned on the unedited query. The conditioning-based formulation scales well from two to many views of an object. 
+We propose GeM-NR, a fast and flexible training-free approach for <em>general</em> multi-view consistent image editing, including edits that drastically change the geometry and appearance of the scene. Given an anchor image edited with a chosen backbone editor (such as FLUX, Qwen, BrushNet) and a query unedited image, GeM-NR edits the query image consistently with the anchor edit. The method incorporates multiple stages:
+(i) depth map estimation, where we propose a strategy to maximize the alignment between the 3D point clouds of the edited and unedited scenes, (ii) projection onto a query viewpoint, and (iii) refinement of the obtained image conditioned on the unedited query. The conditioning-based formulation scales well from two to many views of an object.
 We demonstrate the ability of our method to handle edits with significant changes in geometry and appearance, something that existing methods struggle with. We perform an extensive evaluation showing that our method improves consistency for a wide variety of edit tasks, including generating 3D representations of the edited scene. Both quantitative and qualitative results indicate the state-of-the-art performance of our method in terms of edit quality as well as geometric and photometric consistency across multiple views.
         </div>
       </div>
@@ -153,50 +158,35 @@ We demonstrate the ability of our method to handle edits with significant change
     <!--/ Abstract. -->
    
 </section>
-<!-- 
 <section class="section">
   <div class="container is-max-desktop">
-    <!-- Multi-view Consistent Editing -->
     <div class="columns is-centered has-text-centered">
-      <div class="column is-four-fifths">
-        <h2 class="title is-3">Multi-view Consistent Editing</h2>
-        <div class="content has-text-justified">
-          
-          <p>  -->
+      <div class="column">
+        <h2 class="title is-3">Method Overview</h2>
+        <embed src="static/images/introfig.pdf" type="application/pdf" width="100%" height="600px" />
+      </div>
+    </div>
 
-          <!-- </p> 
-            
+    <div class="columns is-centered has-text-centered" style="margin-top: 2rem;">
+      <div class="column">
+        <h2 class="title is-3">Results</h2>
 
-            <h4 class="title is-5 has-text-centered">Edited Multi-View Images with <a href="https://arxiv.org/abs/2506.15742" target="_blank">FLUX.1</a></h4>
-            <div class="container is-max-desktop" style="margin-bottom: 2rem;">
-               <div>
-              <img src="static/images/FluxExamples.png" />
-       </p>
-               <h4 class="title is-5 has-text-centered">Edited Multi-View Images with <a href="https://arxiv.org/abs/2403.12036" target="_blank">pix2pix-turbo</a></h4>
-            <div>
-              <img src="static/images/ConsistencyExample.png" />
-            </div>
-         
-              <h4 class="title is-5 has-text-centered">Edited Multi-View Images with <a href="https://arxiv.org/abs/2211.09800" target="_blank">InstructPix2Pix</a></h4>
+        <h4 class="title is-5 has-text-centered" style="margin-top: 1.5rem;">Multi-View Editing — Gems</h4>
+        <embed src="static/images/mv_gems.pdf" type="application/pdf" width="100%" height="500px" />
 
-              <div class="container is-max-desktop">
-            <div>
-              <img src="static/images/ConsistencyExampleJoker.png" />
-            </div>
-          </div>
-           </div>
-            <p> 
-            We show that our method gives edited images with improved multi-view consistency compared to other state-of-the-art 3D editing methods  (<a href="https://kuai-lab.github.io/editsplat2024/" target="_blank">EditSplat</a> and <a href="https://silent-chen.github.io/DGE/" target="_blank">DGE</a>).
-          </p> 
-            <div class="container is-max-desktop" style="margin-bottom: 2rem;">
-            <div>
-              <img src="static/images/ConsistencyTable.png" />
-            </div>
-          </div> -->
+        <h4 class="title is-5 has-text-centered" style="margin-top: 1.5rem;">Multi-View Editing — Dirt Bike</h4>
+        <embed src="static/images/mv_dirtbike.pdf" type="application/pdf" width="100%" height="500px" />
 
+        <h4 class="title is-5 has-text-centered" style="margin-top: 1.5rem;">Multi-View Editing — Sitting Dog</h4>
+        <embed src="static/images/mv_sitting_dog.pdf" type="application/pdf" width="100%" height="500px" />
 
-        
-          
+        <h4 class="title is-5 has-text-centered" style="margin-top: 1.5rem;">Multi-View Editing — Bear Statue Removal</h4>
+        <embed src="static/images/mv_remove_bear_statue.pdf" type="application/pdf" width="100%" height="500px" />
+
+        <h4 class="title is-5 has-text-centered" style="margin-top: 1.5rem;">Patch Editing — Jacket</h4>
+        <embed src="static/images/patch_jacket.pdf" type="application/pdf" width="100%" height="500px" />
+      </div>
+    </div>
   </div>
 </section>
 <section class="section" id="BibTeX">
