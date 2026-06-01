@@ -120,44 +120,7 @@
 
 
 
-<section class="section">
-  <div class="container is-max-desktop">
-     <!-- Paper video. -->
-    <!--/<div class="columns is-centered has-text-centered">
-      <div class="column is-four-fifths">
-        <h2 class="title is-3">Video</h2>
-        <div class="publication-video">
-          <iframe width="560" height="315" src="" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
-        </div>
-      </div>
-    </div> -->
-    <div class="columns is-centered has-text-centered">
-      <div class="column is-four-fifths">
-        <h2 class="title is-3">Video</h2>
-        <video controls style="width:100%;">
-          <source src="static/video/Video.mp4" type="video/mp4">
-        </video>
-      </div>
-    </div>
-    <!--/ Paper video. -->
-  </div>
-    <!-- Abstract. -->
-    <div class="columns is-centered has-text-centered">
-      <div class="column is-four-fifths">
-        <h2 class="title is-3">Abstract</h2>
-        <div class="content has-text-justified">
-                      Recent developments in multi-view image editing with generative models have brought us a step closer toward general 3D content generation and customization. Most existing works focus on <em>rigid</em> or <em>appearance-only</em> edits by utilizing the geometry of the unedited scene. This naturally limits these methods to edits that preserve the underlying scene structure. Other approaches are trained for specific image editing tasks, such as object removal and insertion.
-Despite this progress, general nonrigid edits, <em>i.e.</em>, edits that substantially change the scene geometry, remain challenging for existing methods.
-
-We propose GeM-NR, a fast and flexible training-free approach for <em>general</em> multi-view consistent image editing, including edits that drastically change the geometry and appearance of the scene. Given an anchor image edited with a chosen backbone editor (such as FLUX, Qwen, BrushNet) and a query unedited image, GeM-NR edits the query image consistently with the anchor edit. The method incorporates multiple stages:
-(i) depth map estimation, where we propose a strategy to maximize the alignment between the 3D point clouds of the edited and unedited scenes, (ii) projection onto a query viewpoint, and (iii) refinement of the obtained image conditioned on the unedited query. The conditioning-based formulation scales well from two to many views of an object.
-We demonstrate the ability of our method to handle edits with significant changes in geometry and appearance, something that existing methods struggle with. We perform an extensive evaluation showing that our method improves consistency for a wide variety of edit tasks, including generating 3D representations of the edited scene. Both quantitative and qualitative results indicate the state-of-the-art performance of our method in terms of edit quality as well as geometric and photometric consistency across multiple views.
-        </div>
-      </div>
-    </div>
-    <!--/ Abstract. -->
-   
-</section>
+<!-- Method Overview -->
 <section class="section">
   <div class="container is-max-desktop">
     <div class="columns is-centered has-text-centered">
@@ -166,25 +129,63 @@ We demonstrate the ability of our method to handle edits with significant change
         <img src="static/images/introfig.png" style="width:100%;" />
       </div>
     </div>
+  </div>
+</section>
 
-    <div class="columns is-centered has-text-centered" style="margin-top: 2rem;">
+<!-- Abstract -->
+<section class="section">
+  <div class="container is-max-desktop">
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3">Abstract</h2>
+        <div class="content has-text-justified">
+          Recent developments in multi-view image editing with generative models have brought us a step closer toward general 3D content generation and customization. Most existing works focus on <em>rigid</em> or <em>appearance-only</em> edits by utilizing the geometry of the unedited scene. This naturally limits these methods to edits that preserve the underlying scene structure. Other approaches are trained for specific image editing tasks, such as object removal and insertion.
+          Despite this progress, general nonrigid edits, <em>i.e.</em>, edits that substantially change the scene geometry, remain challenging for existing methods.
+
+          We propose GeM-NR, a fast and flexible training-free approach for <em>general</em> multi-view consistent image editing, including edits that drastically change the geometry and appearance of the scene. Given an anchor image edited with a chosen backbone editor (such as FLUX, Qwen, BrushNet) and a query unedited image, GeM-NR edits the query image consistently with the anchor edit. The method incorporates multiple stages:
+          (i) depth map estimation, where we propose a strategy to maximize the alignment between the 3D point clouds of the edited and unedited scenes, (ii) projection onto a query viewpoint, and (iii) refinement of the obtained image conditioned on the unedited query. The conditioning-based formulation scales well from two to many views of an object.
+          We demonstrate the ability of our method to handle edits with significant changes in geometry and appearance, something that existing methods struggle with. We perform an extensive evaluation showing that our method improves consistency for a wide variety of edit tasks, including generating 3D representations of the edited scene. Both quantitative and qualitative results indicate the state-of-the-art performance of our method in terms of edit quality as well as geometric and photometric consistency across multiple views.
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Multi-View Consistent Editing Results -->
+<section class="section">
+  <div class="container is-max-desktop">
+    <div class="columns is-centered has-text-centered">
       <div class="column">
         <h2 class="title is-3">Multi-View Consistent Editing</h2>
 
-        <!-- <h4 class="title is-5 has-text-centered" style="margin-top: 1.5rem;">Multi-View Editing — Gems</h4> -->
-        <img src="static/images/mv_gems.png" style="width:100%;" />
-
-        <!-- <h4 class="title is-5 has-text-centered" style="margin-top: 1.5rem;">Multi-View Editing — Dirt Bike</h4> -->
-        <img src="static/images/mv_dirtbike.png" style="width:100%;" />
-
-        <!-- <h4 class="title is-5 has-text-centered" style="margin-top: 1.5rem;">Multi-View Editing — Sitting Dog</h4> -->
+        <p style="margin-top: 1.5rem;"><em>"Change bear statue to a sitting dog"</em></p>
         <img src="static/images/mv_sitting_dog.png" style="width:100%;" />
 
-        <!-- <h4 class="title is-5 has-text-centered" style="margin-top: 1.5rem;">Multi-View Editing — Bear Statue Removal</h4> -->
+        <p style="margin-top: 1.5rem;"><em>"Remove the bear statue"</em></p>
         <img src="static/images/mv_remove_bear_statue.png" style="width:100%;" />
 
-        <!-- <h4 class="title is-5 has-text-centered" style="margin-top: 1.5rem;">Patch Editing — Jacket</h4> -->
+        <p style="margin-top: 1.5rem;"><em>"Add large colorful shiny gemstones to the statue"</em></p>
+        <img src="static/images/mv_gems.png" style="width:100%;" />
+
+        <p style="margin-top: 1.5rem;"><em>"Change the bicycle to a dirt motorbike"</em></p>
+        <img src="static/images/mv_dirtbike.png" style="width:100%;" />
+
+        <p style="margin-top: 1.5rem;"><em>"Give him a leather jacket with different patches"</em></p>
         <img src="static/images/patch_jacket.png" style="width:100%;" />
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Video -->
+<section class="section">
+  <div class="container is-max-desktop">
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3">Video</h2>
+        <video controls style="width:100%;">
+          <source src="static/video/Video.mp4" type="video/mp4">
+        </video>
       </div>
     </div>
   </div>
