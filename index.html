@@ -52,7 +52,7 @@
     <div class="container is-max-desktop">
       <div class="columns is-centered">
         <div class="column has-text-centered">
-          <h1 class="title is-1 publication-title">3D-Consistent Multi-View Editing by Correspondence Guidance</h1>
+          <h1 class="title is-1 publication-title">GeM-NR: Geometry-Aware Multi-View Editing for Nonrigid Scene Changes</h1>
           <div class="is-size-5 publication-authors">
             <span class="author-block">
               <a href="https://www.chalmers.se/en/persons/bjosef/">Josef Bengtson</a><sup>1</sup>, </span>
@@ -66,7 +66,6 @@
 
           <div class="is-size-5 publication-authors">
             <span class="author-block"><sup>1</sup>Chalmers University of Technology  &nbsp; </span>
-            <span class="author-block"><sup>2</sup>Korea University &nbsp; </span>
           </div>
 
           
@@ -142,18 +141,19 @@
       <div class="column is-four-fifths">
         <h2 class="title is-3">Abstract</h2>
         <div class="content has-text-justified">
-          
-          <p>
-           Recent advancements in diffusion and flow models have greatly improved text-based image editing, yet methods that edit images independently often produce geometrically and photometrically inconsistent results across different views of the same scene. Such inconsistencies are particularly problematic for editing of 3D representations such as NeRFs or Gaussian splat models. We propose a training-free guidance framework that enforces multi-view consistency during the image editing process. The key idea is that corresponding points should look similar after editing.
-          <p>
-            To achieve this, we introduce a consistency loss that guides the denoising process toward coherent edits. The framework  is flexible and can be combined with widely varying image editing methods, supporting both dense and sparse multi-view editing setups. Experimental results show that our approach significantly improves 3D consistency compared to existing multi-view editing methods. We also show that this increased consistency enables high-quality Gaussian splat editing with sharp details and strong fidelity to user-specified text prompts.
+                      Recent developments in multi-view image editing with generative models have brought us a step closer toward general 3D content generation and customization. Most existing works focus on \textit{rigid} or \textit{appearance-only} edits by utilizing the geometry of the unedited scene. This naturally limits these methods to edits that preserve the underlying scene structure. Other approaches are trained for specific image editing tasks, such as object removal and insertion.
+Despite this progress, general nonrigid edits, \textit{i.e.}, edits that substantially change the scene geometry, remain challenging for existing methods.
+
+We propose \MethodAcronym, a fast and flexible training-free approach for \textit{general} multi-view consistent image editing, including edits that drastically change the geometry and appearance of the scene. Given an anchor image edited with a chosen backbone editor (such as FLUX, Qwen, BrushNet) and a query unedited image, \MethodAcronym edits the query image consistently with the anchor edit. The method incorporates multiple stages:  
+(i) depth map estimation, where we propose a  strategy to maximize the alignment between the 3D point clouds of the edited and unedited scenes, (ii) projection onto a query viewpoint, and (iii) refinement of the obtained image conditioned on the unedited query. The conditioning-based formulation scales well from two to many views of an object. 
+We demonstrate the ability of our method to handle edits with significant changes in geometry and appearance, something that existing methods struggle with. We perform an extensive evaluation showing that our method improves consistency for a wide variety of edit tasks, including generating 3D representations of the edited scene. Both quantitative and qualitative results indicate the state-of-the-art performance of our method in terms of edit quality as well as geometric and photometric consistency across multiple views.
         </div>
       </div>
     </div>
     <!--/ Abstract. -->
    
 </section>
-
+<!-- 
 <section class="section">
   <div class="container is-max-desktop">
     <!-- Multi-view Consistent Editing -->
@@ -162,14 +162,8 @@
         <h2 class="title is-3">Multi-view Consistent Editing</h2>
         <div class="content has-text-justified">
           
-          <p> 
-            Recent developments in multi-view image editing with generative models have brought us a step closer toward general 3D content generation and customization. Most existing works focus on \textit{rigid} or \textit{appearance-only} edits by utilizing the geometry of the unedited scene. This naturally limits these methods to edits that preserve the underlying scene structure. Other approaches are trained for specific image editing tasks, such as object removal and insertion.
-Despite this progress, general nonrigid edits, \textit{i.e.}, edits that substantially change the scene geometry, remain challenging for existing methods.
+          <p>  -->
 
-We propose \MethodAcronym, a fast and flexible training-free approach for \textit{general} multi-view consistent image editing, including edits that drastically change the geometry and appearance of the scene. Given an anchor image edited with a chosen backbone editor (such as FLUX, Qwen, BrushNet) and a query unedited image, \MethodAcronym edits the query image consistently with the anchor edit. The method incorporates multiple stages:  
-(i) depth map estimation, where we propose a  strategy to maximize the alignment between the 3D point clouds of the edited and unedited scenes, (ii) projection onto a query viewpoint, and (iii) refinement of the obtained image conditioned on the unedited query. The conditioning-based formulation scales well from two to many views of an object. 
-We demonstrate the ability of our method to handle edits with significant changes in geometry and appearance, something that existing methods struggle with. We perform an extensive evaluation showing that our method improves consistency for a wide variety of edit tasks, including generating 3D representations of the edited scene. Both quantitative and qualitative results indicate the state-of-the-art performance of our method in terms of edit quality as well as geometric and photometric consistency across multiple views.
-.
           <!-- </p> 
             
 
